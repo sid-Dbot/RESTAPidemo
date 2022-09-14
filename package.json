@@ -1,0 +1,15 @@
+{
+  "name": "restapidemo",
+  "version": "1.0.0",
+  "description": "restapi_creation",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sid",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "joi": "^17.6.0"
+  }
+}
