@@ -15,7 +15,7 @@ app.post("/p", function(req, res){
 
     if(req.body && req.body.name)
     {
-        data.data.push({name:req.body.name});
+        data.data.push({name:req.body.name})
     }
     
     res.json(data);
