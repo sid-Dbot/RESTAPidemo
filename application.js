@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-const data={name:'Sid'};
+var data={name:'Sid'};
 
 
 app.get("/", function(req,res){
