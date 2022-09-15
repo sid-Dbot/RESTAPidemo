@@ -13,8 +13,13 @@ app.get("/p",function(req,res){
 })
 app.post("/p", function(req, res){
 
-    data.d.push({name:req.body.name});
-    res.send(data);
+    if(req.body && req.body.name)
+    {
+        data.data.push({name:req.body.name});
+    }
+    
+    res.json(data);
+    res.end();
 })
 
 
