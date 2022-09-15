@@ -11,6 +11,11 @@ app.get("/", function(req,res){
 app.get("/p",function(req,res){
     res.json(data);
 })
+app.post("/p", function(req, res){
+
+    data.d.push({name:req.body.name});
+    res.send(data);
+})
 
 
 app.listen(8080);
