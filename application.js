@@ -10,7 +10,7 @@ app.get("/", function(req,res){
 })
 app.get("/p",function(req,res){
     res.json(data);
-});
+})
 
 
 app.listen(8080);
