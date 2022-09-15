@@ -1,10 +1,10 @@
 const express = require("express");
 
-const App = express();
+const app = express();
 
-App.get("/peeps",function(req,res){
+app.get("/peeps",function(req,res){
     res.send("Hello FOOL!");
 });
 
 
-App.listen(3000);
+app.listen(8080);
