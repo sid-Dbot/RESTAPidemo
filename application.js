@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-var data={name:'Sid'};
+let data={name:'Sid'};
 
 
 app.get("/", function(req,res){
@@ -13,14 +13,13 @@ app.get("/p",function(req,res){
 })
 app.post("/p", function(req, res){
 
-    if(req.body && req.body.name)
-    {
-        data.data.push({name:req.body.name})
-    }
-    
+   
+    console.log(req);
     res.json(data);
     res.end();
 })
 
 
-app.listen(8080);
+app.listen(8080,()=>{
+    console.log("Server Started")
+});
