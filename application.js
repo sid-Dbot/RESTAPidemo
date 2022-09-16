@@ -14,7 +14,7 @@ app.get("/p",function(req,res){
 app.post("/p", function(req, res){
 
    
-    console.log("This is the POST request.");
+    console.log("A POST request is made.");
     res.json(data);
     res.end();
 })
