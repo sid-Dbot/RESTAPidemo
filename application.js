@@ -1,9 +1,10 @@
 const express = require("express");
-const BodyParser = require("body-parser")
+const BodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(BodyParser)
+app.use(BodyParser);
 
 let data={name:'Sid'};
 
@@ -15,9 +16,11 @@ app.get("/p",function(req,res){
     res.json(data);
 })
 app.post("/p", function(req, res){
-
+    if(req.body && req.body.name){
+        data.push({name:req.body.name});
+    }
    
-    console.log("A POST request is made.");
+    //console.log("A POST request is made.");
     res.json(data);
     res.end();
 })
