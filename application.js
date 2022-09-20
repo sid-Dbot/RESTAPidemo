@@ -1,12 +1,13 @@
 const express = require("express");
-const BodyParser = require("body-parser");
+
 const bodyParser = require("body-parser");
 
 const app = express();
+app.use(bodyParser.urlencoded({extended:false}))
 
-app.use(BodyParser);
+app.use(bodyParser.json());
 
-let data={name:'Sid'};
+let data=[{name:'Sid'}];
 
 
 app.get("/", function(req,res){
@@ -21,6 +22,7 @@ app.post("/p", function(req, res){
     }
    
     //console.log("A POST request is made.");
+    console.log(req.body.name)
     res.json(data);
     res.end();
 })
