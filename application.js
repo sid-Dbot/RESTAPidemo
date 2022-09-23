@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 app.use(bodyParser.json());
 
-let data=[{name:'Sid'}];
+let data={name:'Sid'};
 
 
 app.get("/", function(req,res){
