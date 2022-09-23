@@ -1,21 +1,21 @@
 const express = require("express");
-
 const bodyParser = require("body-parser");
+
+import usersRoutes from ("./routes/user.js");
+
+//const usersRoutes = require('./routes/user.js');
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:false}))
 
 app.use(bodyParser.json());
 
-let data={name:'Sid'};
+let data=[{name:'Sid'}];
 
 
-app.get("/", function(req,res){
-    res.send("Welcome to my very first REST API Demo.")
-})
-app.get("/p",function(req,res){
-    res.json(data);
-})
+app.get("/", (req,res) => res.send("Welcome to my very first REST API Demo."));
+
+app.use('/users', usersRoutes)
 app.post("/p", function(req, res){
     if(req.body && req.body.name){
         data.push({name:req.body.name});
@@ -29,5 +29,5 @@ app.post("/p", function(req, res){
 
 
 app.listen(8080,()=>{
-    console.log("Server Started")
+    console.log("Server Started on http://localhost:8080")
 });
